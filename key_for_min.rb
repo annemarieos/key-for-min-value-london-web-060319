@@ -9,7 +9,9 @@ def key_for_min_value(name_hash)
     min_key = nil
 
     name_hash.each_key do |key|
-      if min_key.nil? || name_hash[:key] < name_hash[:min_key]
+      if min_key.nil?
+        min_key = key
+      elsif name_hash[:key] < name_hash[:min_key]
         min_key = key
       end
     end
